@@ -26,24 +26,30 @@ fn main() {
 
 // set some more options
     msg.opts_mut()
-        .insert(v4::DhcpOption::ParameterRequestList(vec![
-            v4::OptionCode::SubnetMask,
-            v4::OptionCode::Router,
-            v4::OptionCode::DomainNameServer,
-            v4::OptionCode::DomainName,
+        .insert(v4::DhcpOption::ParameterRequestList(vec![ //opt 55
+            v4::OptionCode::SubnetMask, // 1
+            v4::OptionCode::Router, // 3
+            v4::OptionCode::DomainNameServer, // 6
+            v4::OptionCode::LogServer, // 7
+            v4::OptionCode::Hostname, // 12
+            v4::OptionCode::DomainName, //15
         ]));
     msg.opts_mut()
-        .insert(v4::DhcpOption::ClientIdentifier(chaddr));
+        .insert(v4::DhcpOption::ClientIdentifier(chaddr)); //opt 63
+    msg.opts_mut()
+        .insert(v4::DhcpOption::MaxMessageSize(576)); //opt 57
 
 
     let mut info = RelayAgentInformation::default();
     info.insert(RelayInfo::LinkSelection("1.2.3.4".parse().unwrap()));
     info.insert(RelayInfo::AgentRemoteId(chaddr2));
-    let mut msg = v4::Message::default();
+
+   // let mut msg = v4::Message::default();
     msg.opts_mut()
-        .insert(v4::DhcpOption::RelayAgentInformation(info));
+        .insert(v4::DhcpOption::RelayAgentInformation(info)); //82
     msg.opts_mut()
         .insert(v4::DhcpOption::MessageType(v4::MessageType::Discover));
+
 
     
 
