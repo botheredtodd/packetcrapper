@@ -11,5 +11,3 @@ pub(crate) struct CableModem {
     pub(crate) giaddr :Ipv4Addr,
     pub(crate) docsis_version :docsis::DocsisVersions,
 }
-
-}
