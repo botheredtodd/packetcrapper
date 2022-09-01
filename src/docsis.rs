@@ -26,7 +26,7 @@ pub(crate) struct Features {
     pub(crate) upstream_frequency_range_support :UpstreamFrequencyRanges, //14
     pub(crate) upstream_symbol_rate_support :UpstreamSymbols, //15
     pub(crate) selectable_active_code_mode_2_support :bool, //16
-    pub(crate) code_hopping_mode_2_support :bool, //16
+    pub(crate) code_hopping_mode_2_support :bool, //17
 }
 
 pub(crate) struct RangingHoldOffSupport {

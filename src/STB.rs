@@ -64,9 +64,6 @@ msg.opts_mut()
 
 
 
-
-
-
 // now encode to bytes
 let mut buf = Vec::new();
 let mut e = Encoder::new(&mut buf);
