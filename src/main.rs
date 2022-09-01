@@ -11,6 +11,6 @@ use v4::OptionCode::MessageType;
 
 fn main() {
 
-
+    STB::send_stb();
 
 }
