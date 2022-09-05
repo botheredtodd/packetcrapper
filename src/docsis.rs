@@ -27,8 +27,22 @@ pub(crate) struct Features {
     pub(crate) upstream_symbol_rate_support :UpstreamSymbols, //15
     pub(crate) selectable_active_code_mode_2_support :bool, //16
     pub(crate) code_hopping_mode_2_support :bool, //17
+    pub(crate) multiple_transmit_channel_support :u8, //18
+    pub(crate) msps_512_upstream_channel_support :u8, //19
+    pub(crate) msps_256_upstream_channel_support :u8, //1a
+    pub(crate) total_sid_cluster_support :u8, //1b
+    pub(crate) sid_clusters_per_service_flow_support :u8, //1c
+    pub(crate) multiple_receive_channel_support :u8, //1d
+    pub(crate) total_downstream_service_id_support :u8, //1e
+    pub(crate) resequencing_downstream_service_id_support :u8, //1f
+    pub(crate) multicast_downstream_service_id_support :u8, //20
+    pub(crate) multicast_downstream_service_id_forwarding :DsidForwarding, //21
+
 }
 
+pub(crate) enum DsidForwarding {
+    GmacPromiscuousMulticast, //02
+}
 pub(crate) struct RangingHoldOffSupport {
     pub(crate) cm :bool,
     pub(crate) erouter :bool,
